@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30320.27
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "texode", "texode\texode.csproj", "{EAD58A31-EC04-4135-BDA4-825DE6FB0461}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "client", "client\client.csproj", "{3D45BB35-50BE-4E41-81EA-A824557D4B6F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EAD58A31-EC04-4135-BDA4-825DE6FB0461}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAD58A31-EC04-4135-BDA4-825DE6FB0461}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAD58A31-EC04-4135-BDA4-825DE6FB0461}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAD58A31-EC04-4135-BDA4-825DE6FB0461}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D45BB35-50BE-4E41-81EA-A824557D4B6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D45BB35-50BE-4E41-81EA-A824557D4B6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D45BB35-50BE-4E41-81EA-A824557D4B6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D45BB35-50BE-4E41-81EA-A824557D4B6F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5B0193BB-62BE-42EE-AD15-6B0B74C90D07}
+	EndGlobalSection
+EndGlobal
