@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "wT5usDF63Uk6BXNnJippkTk63+yHFPXN9VAP10+BtMlzD1UIDRoB0+0Fj799LAm7UWWqEXIXH3r39fwK4ORcLw==",
+  "dgSpecHash": "PLtRTgJQlY6f6eMLO6kO1WkAkhnz9ey9myIubroUWc6R29U/21P720xoyBduVBDIW55r7p9M+D4MIRUiDOGUzA==",
   "success": true,
   "projectFilePath": "D:\\programmig\\C#\\texode\\texode\\texode.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\MiAir\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+  ],
   "logs": []
 }
