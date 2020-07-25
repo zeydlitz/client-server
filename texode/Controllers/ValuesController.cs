@@ -8,7 +8,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace texode.Controllers
 {
-    [Route("api/[controller]")]
+    //[controller]
+    [Route("api/valuess")]
     [ApiController]
     public class ValuesController : ControllerBase
     {
