@@ -42,6 +42,7 @@ namespace texode.Controllers
         [Route("GetAllBooks")]
         public List<InformationCard> GetAllBooks()
         {
+            _logger.LogInfo("return All books");
             // Возвратить все книги
             throw new Exception("Exception");
             return data.books;
@@ -52,9 +53,10 @@ namespace texode.Controllers
         [Route("GetBook")]
         public InformationCard GetBook(int id)
         {
+            _logger.LogInfo($"return books with id={id}");
             // Возврат определенной книги
-   
-                return data[id];
+
+            return data[id];
             
             //catch (ArgumentOutOfRangeException e)
             //{
@@ -74,6 +76,7 @@ namespace texode.Controllers
         [Route("SaveNewBook")]
         public List<InformationCard> SaveNewUser([FromQuery] InformationCard book)
         {
+            _logger.LogInfo("Save book");
             //Добавить книгу
             data.books.Add(book);
             return data.books;
@@ -84,6 +87,7 @@ namespace texode.Controllers
         [Route("UpdateBook")]
         public List<InformationCard> UpdateUser(int id, [FromQuery] InformationCard book)
         {
+            _logger.LogInfo($"update book with id={id}");
             // Обновить книгу
             data[id] = book;
             return data.books;
@@ -94,6 +98,7 @@ namespace texode.Controllers
         [Route("DeleteBook")]
         public List<InformationCard> DeleteUser(int id)
         {
+            _logger.LogInfo($"delete book with id={id}");
             // Delete user at position id
             data.books.RemoveAt(id);
             return data.books;

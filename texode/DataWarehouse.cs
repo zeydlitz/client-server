@@ -12,16 +12,9 @@ namespace texode
         {
             get
             {
-                if (books[index] == null)
-                {
-                    return books[index];
-                }
-                else
-                {
-                    return books[index];
-                }
 
-                ;
+                return books[index];
+
             }
 
             set
