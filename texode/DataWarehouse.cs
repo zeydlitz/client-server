@@ -26,16 +26,16 @@ namespace texode
     }
     public class InformationCard
     {
-        public string name;
-        public string path;
-        public string Name { get => name; set => name = value; }
+        private string name;
+        private string path;
+        public string Name_file { get => name; set => name = value; }
         public string Path { get => path; set => path = value; }
-        InformationCard()
+        public InformationCard()
         {
             name = "Swift";
             path = "book\\Swift";
         }
-        InformationCard(string name, string path)
+        public InformationCard(string name, string path)
         {
             this.name = name;
             this.path = path;

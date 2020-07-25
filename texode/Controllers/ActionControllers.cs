@@ -74,22 +74,22 @@ namespace texode.Controllers
         // POST api/<Action>
         [HttpPost]
         [Route("SaveNewBook")]
-        public List<InformationCard> SaveNewUser([FromQuery] InformationCard book)
+        public List<InformationCard> SaveNewUser([FromQuery] string name ,string path)
         {
             _logger.LogInfo("Save book");
             //Добавить книгу
-            data.books.Add(book);
+            data.books.Add(new InformationCard(){Name_file = name, Path = path});
             return data.books;
         }
 
         // PUT api/<Action>/5
         [HttpPut("{id}")]
         [Route("UpdateBook")]
-        public List<InformationCard> UpdateUser(int id, [FromQuery] InformationCard book)
+        public List<InformationCard> UpdateUser(int id, [FromQuery] string name, string path)
         {
             _logger.LogInfo($"update book with id={id}");
             // Обновить книгу
-            data[id] = book;
+            data[id] = new InformationCard() { Name_file = name, Path = path };
             return data.books;
         }
 
