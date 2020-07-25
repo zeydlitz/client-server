@@ -20,39 +20,19 @@ namespace texode.Controllers
     [ApiController]
     public class ActionControllers : ControllerBase
     {
+        private ILoggerManager _logger;
         public static DataWarehouse data=new DataWarehouse();
         private readonly string path = @"D:\programmig\C#\texode\texode\data\book.json";
-        [GloblaException]
-        public ActionControllers(DataWarehouse buff)
+
+        public ActionControllers(DataWarehouse buff, ILoggerManager logger)
         {
-            
-            
-                StreamReader r = new StreamReader(path);
+            _logger = logger;
+
+            using (StreamReader r = new StreamReader(path))
+            {
                 string json = r.ReadToEnd();
                 data.books = JsonConvert.DeserializeObject<List<InformationCard>>(json);
-                var test = data.books[0];
-
-
-            //catch (FileNotFoundException e)
-            //{
-            //    var response = new HttpResponseMessage(HttpStatusCode.NotFound)
-            //    {
-            //        Content = new StringContent(string.Format("No file found with name = {0}", path)),
-            //        ReasonPhrase = e.Message
-            //    };
-
-            //    throw new System.Web.Http.HttpResponseException(response);
-            //}
-            //catch (NullReferenceException e)
-            //{
-            //    var response = new HttpResponseMessage(HttpStatusCode.NotFound)
-            //    {
-            //        Content = new StringContent(string.Format("File doesnt contain object = {0}", 0)),
-            //        ReasonPhrase = e.Message
-            //    };
-
-            //    throw new System.Web.Http.HttpResponseException(response);
-            //}
+            }
         }
 
 
@@ -63,6 +43,7 @@ namespace texode.Controllers
         public List<InformationCard> GetAllBooks()
         {
             // Возвратить все книги
+            throw new Exception("Exception");
             return data.books;
         }
 
@@ -72,20 +53,19 @@ namespace texode.Controllers
         public InformationCard GetBook(int id)
         {
             // Возврат определенной книги
-            try
-            {
+   
                 return data[id];
-            }
-            catch (ArgumentOutOfRangeException e)
-            {
-                Console.WriteLine(e.Message);
-                throw;
-            }
-            catch(NullReferenceException ex)
-            {
-                Console.WriteLine(ex.Message);
-                throw;
-            }
+            
+            //catch (ArgumentOutOfRangeException e)
+            //{
+            //    Console.WriteLine(e.Message);
+            //    throw;
+            //}
+            //catch(NullReferenceException ex)
+            //{
+            //    Console.WriteLine(ex.Message);
+            //    throw;
+            //}
             
         }
 

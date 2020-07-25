@@ -1,17 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Net;
 using System.Net.Http;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.AspNetCore.Mvc;
-
+using System.Web.Http;
 namespace texode
 {
     public class GloblaException: Attribute, IExceptionFilter
     {
-        public void OnException(ExceptionContext context)
+        public  void OnException(ExceptionContext context)
         {
             string actionName = context.ActionDescriptor.DisplayName;
             string exceptionStack = context.Exception.StackTrace;
@@ -21,6 +22,8 @@ namespace texode
                 Content = $"В методе {actionName} возникло исключение: \n {exceptionMessage} \n {exceptionStack}"
             };
             context.ExceptionHandled = true;
+            //base.OnException(context);
         }
     }
+    
 }

@@ -13,11 +13,21 @@ namespace texode.Controllers
     [ApiController]
     public class ValuesController : ControllerBase
     {
+        private ILoggerManager _logger;
+
+        public ValuesController(ILoggerManager logger)
+        {
+            _logger = logger;
+        }
         // GET: api/<ValuesController>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public int Get()
         {
-            return new string[] { "value1", "value2" };
+            _logger.LogInfo("Here is info message from our values controller.");
+            _logger.LogDebug("Here is debug message from our values controller.");
+            _logger.LogWarn("Here is warn message from our values controller.");
+            _logger.LogError("Here is an error message from our values controller.");
+            return 5 / 2;
         }
 
         // GET api/<ValuesController>/5
