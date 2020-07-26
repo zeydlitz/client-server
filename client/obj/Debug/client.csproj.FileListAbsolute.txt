@@ -13,3 +13,9 @@ D:\programmig\C#\texode\client\obj\Debug\client.csproj.GenerateResource.cache
 D:\programmig\C#\texode\client\obj\Debug\client.csproj.CoreCompileInputs.cache
 D:\programmig\C#\texode\client\obj\Debug\client.exe
 D:\programmig\C#\texode\client\obj\Debug\client.pdb
+D:\programmig\C#\texode\client\bin\Debug\Newtonsoft.Json.dll
+D:\programmig\C#\texode\client\bin\Debug\System.Drawing.Common.dll
+D:\programmig\C#\texode\client\bin\Debug\System.Net.Http.Formatting.dll
+D:\programmig\C#\texode\client\bin\Debug\Newtonsoft.Json.xml
+D:\programmig\C#\texode\client\bin\Debug\System.Net.Http.Formatting.xml
+D:\programmig\C#\texode\client\obj\Debug\client.csproj.CopyComplete

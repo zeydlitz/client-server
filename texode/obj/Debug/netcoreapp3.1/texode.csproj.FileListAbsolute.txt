@@ -27,7 +27,7 @@ D:\programmig\C#\texode\texode\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Depe
 D:\programmig\C#\texode\texode\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
 D:\programmig\C#\texode\texode\bin\Debug\netcoreapp3.1\NLog.dll
 D:\programmig\C#\texode\texode\bin\Debug\netcoreapp3.1\NLog.Extensions.Logging.dll
+D:\programmig\C#\texode\texode\bin\Debug\netcoreapp3.1\nlog.config
 D:\programmig\C#\texode\texode\obj\Debug\netcoreapp3.1\texode.csproj.CoreCompileInputs.cache
 D:\programmig\C#\texode\texode\obj\Debug\netcoreapp3.1\texode.MvcApplicationPartsAssemblyInfo.cs
 D:\programmig\C#\texode\texode\obj\Debug\netcoreapp3.1\texode.MvcApplicationPartsAssemblyInfo.cache
-D:\programmig\C#\texode\texode\bin\Debug\netcoreapp3.1\nlog.config

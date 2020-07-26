@@ -22,8 +22,7 @@ namespace texode.Controllers
     {
         private ILoggerManager _logger;
         public static DataWarehouse data=new DataWarehouse();
-        private readonly string path = @"D:\programmig\C#\texode\texode\data\book.json";
-
+        private readonly string path = @"D:\\programmig\\C#\\texode\\texode\\data\\book.json";
         public ActionControllers(DataWarehouse buff, ILoggerManager logger)
         {
             _logger = logger;
@@ -33,6 +32,7 @@ namespace texode.Controllers
                 string json = r.ReadToEnd();
                 data.books = JsonConvert.DeserializeObject<List<InformationCard>>(json);
             }
+            
         }
 
 
@@ -44,7 +44,6 @@ namespace texode.Controllers
         {
             _logger.LogInfo("return All books");
             // Возвратить все книги
-            throw new Exception("Exception");
             return data.books;
         }
 
@@ -78,7 +77,7 @@ namespace texode.Controllers
         {
             _logger.LogInfo("Save book");
             //Добавить книгу
-            data.books.Add(new InformationCard(){Name_file = name, Path = path});
+            data.books.Add(new InformationCard(name,path));
             return data.books;
         }
 
@@ -89,7 +88,7 @@ namespace texode.Controllers
         {
             _logger.LogInfo($"update book with id={id}");
             // Обновить книгу
-            data[id] = new InformationCard() { Name_file = name, Path = path };
+            data[id] = new InformationCard(name,path);
             return data.books;
         }
 

@@ -1,0 +1,4 @@
+D:\programmig\C#\texode\texode\obj\Debug\netstandard2.1\texode.csprojAssemblyReference.cache
+D:\programmig\C#\texode\texode\obj\Debug\netstandard2.1\texode.AssemblyInfoInputs.cache
+D:\programmig\C#\texode\texode\obj\Debug\netstandard2.1\texode.AssemblyInfo.cs
+D:\programmig\C#\texode\texode\obj\Debug\netstandard2.1\texode.csproj.CoreCompileInputs.cache

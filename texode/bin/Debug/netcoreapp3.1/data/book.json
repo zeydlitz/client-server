@@ -1,18 +1,34 @@
 [
-{"name":"Grokking Algorithms",
-"path":"images/Grokking_Algorithms.jpg"},
-{"name":"Clean Code",
-"path":"images/clean_code.jpg"},
-{"name":"Swift",
-"path":"images/Swift.jpg"},
-{"name":"Swift",
-"path":"images/Swift.jpg"},
-{"name":"Java Programming",
-"path":"images/java.jpg"},
-{"name":"Network security",
-"path":"images/security.jpg"},
-{"name":"CLR via C#",
-"path":"images/clr.jpg"},
-{"name":"Grokking Deep learning",
-"path":"images/deep_learning.jpg"}
+  {
+    "name": "Grokking Algorithms",
+    "path": "D:\\programmig\\C#\\texode\\texode\\book\\images\\Grokking_Algorithms.jpg"
+  },
+  {
+    "name": "Clean Code",
+    "path": "D:\\programmig\\C#\\texode\\texode\\book\\images\\clean_code.jpg"
+  },
+  {
+    "name": "Swift",
+    "path": "D:\\programmig\\C#\\texode\\texode\\book\\images\\Swift.jpg"
+  },
+  {
+    "name": "Swift",
+    "path": "D:\\programmig\\C#\\texode\\texode\\book\\images\\Swift.jpg"
+  },
+  {
+    "name": "Java Programming",
+    "path": "D:\\programmig\\C#\\texode\\texode\\book\\images\\java.jpg"
+  },
+  {
+    "name": "Network security",
+    "path": "D:\\programmig\\C#\\texode\\texode\\book\\images\\security.jpg"
+  },
+  {
+    "name": "CLR via C#",
+    "path": "D:\\programmig\\C#\\texode\\texode\\book\\images\\clr.jpg"
+  },
+  {
+    "name": "Grokking Deep learning",
+    "path": "D:\\programmig\\C#\\texode\\texode\\book\\images\\deep_learning.jpg"
+  }
 ]
