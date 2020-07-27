@@ -42,7 +42,7 @@
                                 </Border>
                             </DataTemplate>
                         </ListBox.ItemTemplate>
-                                    <ItemsControl.ItemsPanel>
+                        <ItemsControl.ItemsPanel>
                             <ItemsPanelTemplate>
                                 <WrapPanel/>
                             </ItemsPanelTemplate>
@@ -53,5 +53,9 @@
         </ScrollViewer>
         <Button Content="Delete"    HorizontalAlignment="Left" Margin="49,42,0,0" Grid.Row="1" VerticalAlignment="Top" Width="72" Click="Delete_Click"/>
         <Button Content="Sort"    HorizontalAlignment="Left" Margin="49,72,0,0" Grid.Row="1" VerticalAlignment="Top" Width="72" Click="Sort_Click"/>
+        <Button Content="GetID"    HorizontalAlignment="Left" Margin="49,111,0,0" Grid.Row="1" VerticalAlignment="Top" Width="72" Click="GetID_Click"/>
+        <TextBox  Name="ID" HorizontalAlignment="Left" Height="23" Margin="26,147,0,0" Grid.Row="1" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+
+
     </Grid>
 </Window>

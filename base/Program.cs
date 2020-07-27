@@ -31,6 +31,7 @@ namespace baseIC
         public string Name_file { get => name_file; set => name_file = value; }
         public string Path { get => path; set => path = value; }
         public string ImArray { get => imarray; set => imarray = value; }
+        private byte[] bytearray;
 
        
      
@@ -38,12 +39,13 @@ namespace baseIC
         {
             this.name_file = name;
             this.path = path;
-            string result = System.Text.Encoding.ASCII.GetString(ImageToByteArray());
+            bytearray = ImageToByteArray();
+            
         }
 
         public void SetImarray()
         {
-            ImArray = Convert.ToBase64String(ImageToByteArray());
+            ImArray = Convert.ToBase64String(bytearray);
         }
         public byte[] ImageToByteArray()
         {

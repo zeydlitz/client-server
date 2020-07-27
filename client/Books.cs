@@ -28,25 +28,31 @@ namespace client
         }
 
     }
-    public class Book : InformationCard
+    public class Book 
     {
 
         
         private Image im;
 
-   
+        protected string name_file;
+        protected string path;
+        protected string imarray;
+
+        public string Name_file { get => name_file; set => name_file = value; }
+        public string Path { get => path; set => path = value; }
+        public string ImArray { get => imarray; set => imarray = value; }
         public Image Img { get => im; set => im = value; }
         private BitmapImage bitmapImage;
         public BitmapImage Bit { get => bitmapImage; set => bitmapImage = value; }
 
         //<TextBlock Margin = "5" Text="{Binding Value, StringFormat={}{0:C}}" FontSize="17" FontFamily="Franklin Gothic Medium"/>
  
-        public Book(string name_file, string path, string imArray):base(name_file, path)
+        public Book(string name_file, string path, string imArray)
         {
-            base.name_file = name_file;
-            base.path = path;
-            base.imarray = imArray;
-            im = ByteArrayImageToImage(Convert.FromBase64String(base.imarray));
+            this.name_file = name_file;
+            this.path = path;
+            this.imarray = imArray;
+            im = ByteArrayImageToImage(Convert.FromBase64String(this.imarray));
             bitmapImage = BitmapToImageSource((System.Drawing.Bitmap)im);
 
         }

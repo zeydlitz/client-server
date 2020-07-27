@@ -51,9 +51,21 @@ namespace client
             data.books = response.Result;
 
         }
+        static void GetId(int id )
+        {
+            var url = String.Format("{0}{1}{2}", "http://localhost:5000/", "api/book/GetBook?id=", id.ToString());
+            var request =
+                client.GetAsync(url);
+
+            var response =
+                request.Result.Content.
+                    ReadAsAsync<Book>();
+            data.books.Add(response.Result);
+
+        }
         static void Delete(int id )
         {
-            var url = String.Format("{0}{1}{2}", "http://localhost:5000/", "api/book/DeleteBook?id=",id.ToString());
+            var url = String.Format("{0}{1}{2}", "http://localhost:5000/", "api/book/DeleteBook?id=", id.ToString());
             var request =
                 client.GetAsync(url);
 
@@ -69,6 +81,24 @@ namespace client
         {
             ListViewBooks.Items.SortDescriptions.Add(
                 new System.ComponentModel.SortDescription("Name_file", System.ComponentModel.ListSortDirection.Ascending));
+        }
+        private void GetID_Click(object sender, RoutedEventArgs e)
+        {
+            int id = Convert.ToInt32(ID.Text);
+            if (id > 0 && id < 8)
+            { 
+                ListViewBooks.ClearValue(ItemsControl.ItemsSourceProperty);
+                GetId(id);
+                ListViewBooks.ItemsSource = data.books;
+
+            }
+            else
+            {
+                MessageBox.Show("Incorrecte choose");
+                return;
+                
+            }
+        
         }
         private void Delete_Click(object sender, RoutedEventArgs e)
         {

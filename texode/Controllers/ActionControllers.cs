@@ -23,7 +23,8 @@ namespace texode.Controllers
     {
         private ILoggerManager _logger;
         public static DataWarehouse<InformationCard> data=new DataWarehouse<InformationCard>();
-        private readonly string path = @"D:\\programmig\\C#\\texode\\texode\\data\\book.json";
+        public static List<InformationCard> deep_copy=new List<InformationCard>();
+        private readonly string path = @"data\\book.json";
         public ActionControllers(DataWarehouse<InformationCard> buff, ILoggerManager logger)
         {
             _logger = logger;
@@ -34,7 +35,20 @@ namespace texode.Controllers
                 if (data.books==null)
                 {
                     data.books = JsonConvert.DeserializeObject<List<InformationCard>>(json);
+                    for (int i = 0; i < data.books.Count; i++)
+                    {
+                        //data.books[i].SetImarray();
+                        deep_copy.Add(data.books[i]);
+                    }
+                    foreach (var variable in data.books)
+                    {
+                        variable.SetImarray();
+                    }
+                }
 
+                if (deep_copy.Count == 0)
+                {
+                    deep_copy = data.books;
                 }
 
                 
@@ -51,10 +65,10 @@ namespace texode.Controllers
         {
             _logger.LogInfo("return All books");
             // Возвратить все книги
-            foreach (var buff in data.books)
-            {
-                buff.SetImarray();
-            }
+            //foreach (var buff in data.books)
+            //{
+            //    buff.SetImarray();
+            //}
             return data.books;
         }
 
@@ -64,8 +78,7 @@ namespace texode.Controllers
         public InformationCard GetBook(int id)
         {
             _logger.LogInfo($"return books with id={id}");
-            // Возврат определенной книги
-
+            deep_copy.Add(data[id]);
             return data[id];
             
             //catch (ArgumentOutOfRangeException e)
@@ -84,13 +97,13 @@ namespace texode.Controllers
         // POST api/<Action>
         [HttpPost]
         [Route("SaveNewBook")]
-        public List<InformationCard> SaveNewUser([FromQuery] string name ,string path)
-        {
-            _logger.LogInfo("Save book");
-            //Добавить книгу
-            data.books.Add(new InformationCard(name,path));
-            return data.books;
-        }
+        //public List<InformationCard> SaveNewUser([FromQuery] string name ,string path)
+        //{
+        //    _logger.LogInfo("Save book");
+        //    //Добавить книгу
+        //    data.books.Add(new InformationCard(name,path));
+        //    return data.books;
+        //}
 
         // PUT api/<Action>/5
         [Route("UpdateBook")]
@@ -108,12 +121,13 @@ namespace texode.Controllers
         {
             _logger.LogInfo($"delete book with id={id}");
             // Delete user at position id
-            data.books.RemoveAt(id);
-            foreach (var buff in data.books)
-            {
-                buff.SetImarray();
-            }
-            return data.books;
+            deep_copy.RemoveAt(id);
+            
+            //foreach (var buff in buff.books)
+            //{
+            //    buff.SetImarray();
+            //}
+            return deep_copy;
         }
     }
 }
