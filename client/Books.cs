@@ -5,13 +5,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
+using System.Windows.Media.Imaging;
+using baseIC;
 
 namespace client
 {
     public class CollectionBook
     {
-        public List<Books> books;
-        public Books this[int index]
+        public List<Book> books;
+        public Book this[int index]
         {
             get
             {
@@ -25,37 +27,52 @@ namespace client
         }
 
     }
-    public class Books
+    public class Book : InformationCard
     {
-        public class Book
+
+        
+        private Image im;
+
+   
+        public Image Img { get => im; set => im = value; }
+        private BitmapImage bitmapImage;
+        public BitmapImage Bit { get => bitmapImage; set => bitmapImage = value; }
+
+        //<TextBlock Margin = "5" Text="{Binding Value, StringFormat={}{0:C}}" FontSize="17" FontFamily="Franklin Gothic Medium"/>
+ 
+        public Book(string name_file, string path, string imArray):base(name_file, path)
         {
-            private string name;
-            private string path;
-            private byte[] array;
-            private Image im;
-
-            public byte[] ar { get=>array; set=>array=value; }
-            public string Name_file { get => name; set => name = value; }
-            public string Path { get => path; set => path = value; }
-            public Image Im { get => im; set => im = value; }
-
-            //<TextBlock Margin = "5" Text="{Binding Value, StringFormat={}{0:C}}" FontSize="17" FontFamily="Franklin Gothic Medium"/>
-            public Book(string name, string path, byte[] array)
-            {
-                this.name = name;
-                this.path = path;
-                this.array = array;
-                im = ByteArrayImageToImage(this.array);
-
-            }
-
-            public Image ByteArrayImageToImage(byte[] byteArrayIn)
-            {
-                MemoryStream ms = new MemoryStream(byteArrayIn);
-                Image returnImage = Image.FromStream(ms);
-                return returnImage;
-            }
+            base.name_file = name_file;
+            base.path = path;
+            base.imarray = imArray;
+            im = ByteArrayImageToImage(Convert.FromBase64String(base.imarray));
+            bitmapImage = BitmapToImageSource((System.Drawing.Bitmap)im);
 
         }
+
+        BitmapImage BitmapToImageSource(Bitmap bitmap)
+        {
+            using (MemoryStream memory = new MemoryStream())
+            {
+                bitmap.Save(memory, System.Drawing.Imaging.ImageFormat.Bmp);
+                memory.Position = 0;
+                BitmapImage bitmapimage = new BitmapImage();
+                bitmapimage.BeginInit();
+                bitmapimage.StreamSource = memory;
+                bitmapimage.CacheOption = BitmapCacheOption.OnLoad;
+                bitmapimage.EndInit();
+
+                return bitmapimage;
+            }
+        }
+
+        public Image ByteArrayImageToImage(byte[] byteArrayIn)
+        {
+            MemoryStream ms = new MemoryStream(byteArrayIn);
+            Image returnImage = Image.FromStream(ms);
+            return returnImage;
+        }
+
+
     }
 }

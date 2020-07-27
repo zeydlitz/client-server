@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "cfJ/RV4eOZxp3wClrlx9+rG4YHxGd3IuV0HQ00LSjNXUqh9L9GlOw/OOOuwrFmb9ogoLSAyR7MCeSHiuvBA6qw==",
+  "success": true,
+  "projectFilePath": "D:\\programmig\\C#\\texode\\base\\base.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\MiAir\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\MiAir\\.nuget\\packages\\system.drawing.common\\4.7.0\\system.drawing.common.4.7.0.nupkg.sha512"
+  ],
+  "logs": []
+}

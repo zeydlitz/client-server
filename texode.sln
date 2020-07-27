@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "texode", "texode\texode.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "client", "client\client.csproj", "{3D45BB35-50BE-4E41-81EA-A824557D4B6F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Host", "Host\Host.csproj", "{EFA2148C-2EA4-4EA0-8884-7DF6D9935707}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "base", "base\base.csproj", "{EAA6BD87-8AFE-4B8D-AE0A-8A820174A2A7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{3D45BB35-50BE-4E41-81EA-A824557D4B6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3D45BB35-50BE-4E41-81EA-A824557D4B6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3D45BB35-50BE-4E41-81EA-A824557D4B6F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EFA2148C-2EA4-4EA0-8884-7DF6D9935707}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EFA2148C-2EA4-4EA0-8884-7DF6D9935707}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EFA2148C-2EA4-4EA0-8884-7DF6D9935707}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EFA2148C-2EA4-4EA0-8884-7DF6D9935707}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EAA6BD87-8AFE-4B8D-AE0A-8A820174A2A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAA6BD87-8AFE-4B8D-AE0A-8A820174A2A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAA6BD87-8AFE-4B8D-AE0A-8A820174A2A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAA6BD87-8AFE-4B8D-AE0A-8A820174A2A7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

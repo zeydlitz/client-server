@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:client"
         mc:Ignorable="d"
-        Height="674" Width="1080"
+        Height="600" Width="1080"
         FontFamily="The Medic Demo"
         WindowStartupLocation="CenterScreen">
     <Grid>
@@ -18,13 +18,13 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid Grid.RowSpan="2">
-            <TextBlock Text="Shoes Store" HorizontalAlignment="Center" Margin="10" FontSize="28"/>
+            <TextBlock Text="Store Book" HorizontalAlignment="Center" Margin="10" FontSize="28"/>
         </Grid>
         <ScrollViewer Grid.Column="1" Grid.Row="1" Background="#FFF1F1F1">
             <StackPanel>
                 <TextBlock Text="Items" Margin="10" FontSize="22" FontWeight="Medium"/>
                 <StackPanel Margin="20 0">
-                    <ItemsControl x:Name="ListViewProducts" ItemsSource="{Binding Book}">
+                    <ItemsControl x:Name="ListViewBooks" ItemsSource="{Binding Book}">
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
                                 <Border Margin="10" Width="110" Height="160">
@@ -34,10 +34,10 @@
                                                 <DropShadowEffect ShadowDepth="1"/>
                                             </Border.Effect>
                                             <Border.Background>
-                                                <ImageBrush ImageSource="{Binding Im}"/>
+                                                <ImageBrush ImageSource="{Binding Bit}"/>
                                             </Border.Background>
                                         </Border>
-                                        <TextBlock Margin="5 0" Text="{Binding Name_file}" FontSize="17"/>
+                                        <TextBlock Margin="5 0" Text="{Binding Name}" FontSize="15"/>
                                     </StackPanel>
                                 </Border>
                             </DataTemplate>

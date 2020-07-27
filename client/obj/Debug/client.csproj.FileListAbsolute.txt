@@ -19,3 +19,5 @@ D:\programmig\C#\texode\client\bin\Debug\System.Net.Http.Formatting.dll
 D:\programmig\C#\texode\client\bin\Debug\Newtonsoft.Json.xml
 D:\programmig\C#\texode\client\bin\Debug\System.Net.Http.Formatting.xml
 D:\programmig\C#\texode\client\obj\Debug\client.csproj.CopyComplete
+D:\programmig\C#\texode\client\bin\Debug\base.dll
+D:\programmig\C#\texode\client\bin\Debug\base.pdb

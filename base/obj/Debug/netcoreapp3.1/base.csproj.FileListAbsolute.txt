@@ -1,0 +1,3 @@
+D:\programmig\C#\texode\base\bin\Debug\netcoreapp3.1\base.exe
+D:\programmig\C#\texode\base\obj\Debug\netcoreapp3.1\base.AssemblyInfoInputs.cache
+D:\programmig\C#\texode\base\obj\Debug\netcoreapp3.1\base.AssemblyInfo.cs

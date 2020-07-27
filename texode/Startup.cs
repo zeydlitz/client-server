@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using baseIC;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Hosting;
@@ -34,7 +35,7 @@ namespace texode
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddSingleton(typeof(DataWarehouse));
+            services.AddSingleton(typeof(DataWarehouse<InformationCard>));
             
             //services.AddMvc(option =>
             //{
@@ -43,6 +44,7 @@ namespace texode
             services.ConfigureLoggerService();
             services.ConfigureIISIntegration();
             services.AddControllers();
+            services.AddSignalR();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerManager logger)
@@ -59,9 +61,9 @@ namespace texode
             app.UseRouting();
            
            // app.UseForwardedHeaders(new ForwardedHeadersOptions { ForwardedHeaders = ForwardedHeaders.All });
-           app.UseAuthorization();
-            app.UseStaticFiles();
-            app.UseCors("CorsPolicy");
+           //app.UseAuthorization();
+            //app.UseStaticFiles();
+            //app.UseCors("CorsPolicy");
             //app.UseExceptionHandler("/error");
             //app.UseMiddleware(typeof(ErrorHandlingMiddleware));
             //app.UseMvc();

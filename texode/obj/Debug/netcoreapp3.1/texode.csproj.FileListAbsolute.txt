@@ -28,6 +28,17 @@ D:\programmig\C#\texode\texode\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
 D:\programmig\C#\texode\texode\bin\Debug\netcoreapp3.1\NLog.dll
 D:\programmig\C#\texode\texode\bin\Debug\netcoreapp3.1\NLog.Extensions.Logging.dll
 D:\programmig\C#\texode\texode\bin\Debug\netcoreapp3.1\nlog.config
+D:\programmig\C#\texode\texode\bin\Debug\netcoreapp3.1\base.dll
+D:\programmig\C#\texode\texode\bin\Debug\netcoreapp3.1\base.pdb
+D:\programmig\C#\texode\texode\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Connections.Abstractions.dll
+D:\programmig\C#\texode\texode\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Http.Features.dll
+D:\programmig\C#\texode\texode\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.SignalR.Common.dll
+D:\programmig\C#\texode\texode\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\programmig\C#\texode\texode\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
+D:\programmig\C#\texode\texode\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+D:\programmig\C#\texode\texode\bin\Debug\netcoreapp3.1\System.IO.Pipelines.dll
+D:\programmig\C#\texode\texode\bin\Debug\netcoreapp3.1\System.Net.WebSockets.WebSocketProtocol.dll
+D:\programmig\C#\texode\texode\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.SignalR.Protocols.Json.dll
 D:\programmig\C#\texode\texode\obj\Debug\netcoreapp3.1\texode.csproj.CoreCompileInputs.cache
 D:\programmig\C#\texode\texode\obj\Debug\netcoreapp3.1\texode.MvcApplicationPartsAssemblyInfo.cs
 D:\programmig\C#\texode\texode\obj\Debug\netcoreapp3.1\texode.MvcApplicationPartsAssemblyInfo.cache

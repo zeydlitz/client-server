@@ -1,16 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Net.Mime;
-using System.Threading.Tasks;
 using System.Drawing;
-namespace texode
+using System.IO;
+//using System.Drawing;
+namespace baseIC
 {
-    public class DataWarehouse
+    public class DataWarehouse<T>
     {
-        public List<InformationCard> books;
-        public InformationCard this[int index]
+        public List<T> books;
+        public T this[int index]
         {
             get
             {
@@ -26,21 +24,26 @@ namespace texode
     }
     public class InformationCard
     {
-        private string name;
-        private string path;
-        private byte[] im;
-        
-        public string Name_file { get => name; set => name = value; }
+        protected string name_file;
+        protected string path;
+        protected string imarray;
+
+        public string Name_file { get => name_file; set => name_file = value; }
         public string Path { get => path; set => path = value; }
-        public byte[] Im { get=> im; set=> im=value; }
-    
-  
+        public string ImArray { get => imarray; set => imarray = value; }
+
+       
+     
         public InformationCard(string name, string path)
         {
-            this.name = name;
+            this.name_file = name;
             this.path = path;
-            im = ImageToByteArray();
+            string result = System.Text.Encoding.ASCII.GetString(ImageToByteArray());
+        }
 
+        public void SetImarray()
+        {
+            ImArray = Convert.ToBase64String(ImageToByteArray());
         }
         public byte[] ImageToByteArray()
         {

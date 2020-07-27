@@ -8,6 +8,7 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using System.Web.Http;
+using baseIC;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -21,9 +22,9 @@ namespace texode.Controllers
     public class ActionControllers : ControllerBase
     {
         private ILoggerManager _logger;
-        public static DataWarehouse data=new DataWarehouse();
+        public static DataWarehouse<InformationCard> data=new DataWarehouse<InformationCard>();
         private readonly string path = @"D:\\programmig\\C#\\texode\\texode\\data\\book.json";
-        public ActionControllers(DataWarehouse buff, ILoggerManager logger)
+        public ActionControllers(DataWarehouse<InformationCard> buff, ILoggerManager logger)
         {
             _logger = logger;
 
@@ -44,6 +45,10 @@ namespace texode.Controllers
         {
             _logger.LogInfo("return All books");
             // Возвратить все книги
+            foreach (var buff in data.books)
+            {
+                buff.SetImarray();
+            }
             return data.books;
         }
 
