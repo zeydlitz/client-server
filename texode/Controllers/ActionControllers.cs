@@ -31,7 +31,13 @@ namespace texode.Controllers
             using (StreamReader r = new StreamReader(path))
             {
                 string json = r.ReadToEnd();
-                data.books = JsonConvert.DeserializeObject<List<InformationCard>>(json);
+                if (data.books==null)
+                {
+                    data.books = JsonConvert.DeserializeObject<List<InformationCard>>(json);
+
+                }
+
+                
             }
             
         }
@@ -87,7 +93,6 @@ namespace texode.Controllers
         }
 
         // PUT api/<Action>/5
-        [HttpPut("{id}")]
         [Route("UpdateBook")]
         public List<InformationCard> UpdateUser(int id, [FromQuery] string name, string path)
         {
@@ -98,13 +103,16 @@ namespace texode.Controllers
         }
 
         // DELETE api/<Action>/5
-        [HttpDelete("{id}")]
         [Route("DeleteBook")]
         public List<InformationCard> DeleteUser(int id)
         {
             _logger.LogInfo($"delete book with id={id}");
             // Delete user at position id
             data.books.RemoveAt(id);
+            foreach (var buff in data.books)
+            {
+                buff.SetImarray();
+            }
             return data.books;
         }
     }

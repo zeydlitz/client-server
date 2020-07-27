@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:client"
         mc:Ignorable="d"
-        Height="600" Width="1080"
+        Height="452" Width="1080"
         FontFamily="The Medic Demo"
         WindowStartupLocation="CenterScreen">
-    <Grid>
+    <Grid Margin="0,0,0,22">
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
             <RowDefinition Height="*"/>
@@ -20,12 +20,12 @@
         <Grid Grid.RowSpan="2">
             <TextBlock Text="Store Book" HorizontalAlignment="Center" Margin="10" FontSize="28"/>
         </Grid>
-        <ScrollViewer Grid.Column="1" Grid.Row="1" Background="#FFF1F1F1">
+        <ScrollViewer Grid.Column="1" Grid.Row="1" Background="#FFF1F1F1" Margin="0,0,0,10">
             <StackPanel>
                 <TextBlock Text="Items" Margin="10" FontSize="22" FontWeight="Medium"/>
                 <StackPanel Margin="20 0">
-                    <ItemsControl x:Name="ListViewBooks" ItemsSource="{Binding Book}">
-                        <ItemsControl.ItemTemplate>
+                    <ListBox x:Name="ListViewBooks" ItemsSource="{Binding Book}"  SelectionMode="Single" AlternationCount="20">
+                        <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <Border Margin="10" Width="110" Height="160">
                                     <StackPanel>
@@ -37,19 +37,21 @@
                                                 <ImageBrush ImageSource="{Binding Bit}"/>
                                             </Border.Background>
                                         </Border>
-                                        <TextBlock Margin="5 0" Text="{Binding Name}" FontSize="15"/>
+                                        <TextBlock Margin="5 0" Text="{Binding Path=Name_file  }"  FontSize="15"/>
                                     </StackPanel>
                                 </Border>
                             </DataTemplate>
-                        </ItemsControl.ItemTemplate>
-                        <ItemsControl.ItemsPanel>
+                        </ListBox.ItemTemplate>
+                                    <ItemsControl.ItemsPanel>
                             <ItemsPanelTemplate>
                                 <WrapPanel/>
                             </ItemsPanelTemplate>
                         </ItemsControl.ItemsPanel>
-                    </ItemsControl>
+                    </ListBox>
                 </StackPanel>
             </StackPanel>
         </ScrollViewer>
+        <Button Content="Delete"    HorizontalAlignment="Left" Margin="49,42,0,0" Grid.Row="1" VerticalAlignment="Top" Width="72" Click="Delete_Click"/>
+        <Button Content="Sort"    HorizontalAlignment="Left" Margin="49,72,0,0" Grid.Row="1" VerticalAlignment="Top" Width="72" Click="Sort_Click"/>
     </Grid>
 </Window>

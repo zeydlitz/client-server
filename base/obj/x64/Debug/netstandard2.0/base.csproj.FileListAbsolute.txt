@@ -1,0 +1,9 @@
+D:\programmig\C#\texode\base\bin\x64\Debug\netstandard2.0\base.deps.json
+D:\programmig\C#\texode\base\bin\x64\Debug\netstandard2.0\base.dll
+D:\programmig\C#\texode\base\bin\x64\Debug\netstandard2.0\base.pdb
+D:\programmig\C#\texode\base\obj\x64\Debug\netstandard2.0\base.csprojAssemblyReference.cache
+D:\programmig\C#\texode\base\obj\x64\Debug\netstandard2.0\base.AssemblyInfoInputs.cache
+D:\programmig\C#\texode\base\obj\x64\Debug\netstandard2.0\base.AssemblyInfo.cs
+D:\programmig\C#\texode\base\obj\x64\Debug\netstandard2.0\base.csproj.CoreCompileInputs.cache
+D:\programmig\C#\texode\base\obj\x64\Debug\netstandard2.0\base.dll
+D:\programmig\C#\texode\base\obj\x64\Debug\netstandard2.0\base.pdb

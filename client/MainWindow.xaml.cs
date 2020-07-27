@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Net.Http;
@@ -32,51 +33,56 @@ namespace client
         public MainWindow()
         {
             InitializeComponent();
+            GetAll();
             //RunAsync().GetAwaiter().GetResult();
-            client.BaseAddress = new Uri("http://localhost:5000/");
-            client.DefaultRequestHeaders.Accept.Clear();
-            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            if (data.books.Count > 0)
+                ListViewBooks.ItemsSource = data.books;
+            else MessageBox.Show("No data");
+        }
+        static void GetAll()
+        {
             var url = String.Format("{0}{1}", "http://localhost:5000/", "api/book/GetAllBooks");
             var request =
                 client.GetAsync(url);
 
             var response =
                 request.Result.Content.
-                    ReadAsAsync<List<Book>>();
+                    ReadAsAsync<ObservableCollection<Book>>();
             data.books = response.Result;
-            //var products = GetProducts();
-            if (data.books.Count > 0)
-                ListViewBooks.ItemsSource = data.books;
+
+        }
+        static void Delete(int id )
+        {
+            var url = String.Format("{0}{1}{2}", "http://localhost:5000/", "api/book/DeleteBook?id=",id.ToString());
+            var request =
+                client.GetAsync(url);
+
+            var response =
+                request.Result.Content.
+                    ReadAsAsync<ObservableCollection<Book>>();
+            data.books = response.Result;
+
         }
 
-        static async Task RunAsync()
-        {
-            client.BaseAddress = new Uri("http://localhost:5000/");
-            client.DefaultRequestHeaders.Accept.Clear();
-            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            try
-            {
-                await GetAllAsync();
-               
 
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.Message);
-            }
+        private void Sort_Click(object sender, RoutedEventArgs e)
+        {
+            ListViewBooks.Items.SortDescriptions.Add(
+                new System.ComponentModel.SortDescription("Name_file", System.ComponentModel.ListSortDirection.Ascending));
         }
-
-        static async Task GetAllAsync()
+        private void Delete_Click(object sender, RoutedEventArgs e)
         {
-            var url = String.Format("{0}{1}", "http://localhost:5000/", "api/book/GetAllBooks");
-            var result = await client.GetAsync(url, HttpCompletionOption.ResponseHeadersRead).ConfigureAwait(false); ;
-            var response = Task.Run(() => result);
-            result.EnsureSuccessStatusCode();
-            if (result.IsSuccessStatusCode)
+            var a = ListViewBooks.SelectedItem;
+            int id = ListViewBooks.Items.IndexOf(ListViewBooks.SelectedItem);
+            if (ListViewBooks.SelectedItems.Count > 1 || id<0)
             {
-                //data.books = await result.Content.ReadAsAsync<List<Book>>();
-                a= await result.Content.ReadAsAsync<string>();
+                MessageBox.Show("Incorrecte choose");
+                return;
             }
+
+            ListViewBooks.ClearValue(ItemsControl.ItemsSourceProperty);
+            Delete(id);
+            ListViewBooks.ItemsSource = data.books;
         }
     }
 
